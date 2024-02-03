@@ -2,7 +2,7 @@
 """This module creates a route that returns the
 status of our API.
 """
-from app.v1.views import app_views
+from api.v1.views import app_views
 from flask import jsonify
 
 
