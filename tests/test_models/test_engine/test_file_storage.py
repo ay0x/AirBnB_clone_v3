@@ -85,7 +85,9 @@ test_file_storage.py'])
         """Test if get method returns None for non-existent object"""
         # Assuming there is no object with ID 'nonexistent_id' in any class
         result = self.storage.get(SomeClass, 'nonexistent_id')
-        self.assertIsNone(result, "get method should return None for non-existent object")
+        self.assertIsNone(result,
+                          "get method should return\
+                                  None for non-existent object")
 
     def test_get_method_returns_object(self):
         """Test if get method returns the correct object"""
@@ -94,25 +96,32 @@ test_file_storage.py'])
         self.storage.__session.add(obj)
         self.storage.__session.commit()
         result = self.storage.get(SomeClass, 'existing_id')
-        self.assertEqual(result, obj, "get method should return the correct object")
+        self.assertEqual(result, obj,
+                         "get method should return the correct object")
 
     def test_count_method_all_objects(self):
         """Test if count method returns the count of all objects"""
         # Assuming there are some objects in the storage
         total_objects = self.storage.count()
-        self.assertGreaterEqual(total_objects, 0, "count method should return count of all objects")
+        self.assertGreaterEqual(total_objects, 0,
+                                "count method should return\
+                                        count of all objects")
 
     def test_count_method_specific_class(self):
-        """Test if count method returns the count of objects for a specific class"""
+        """Test if count method returns the count of
+        objects for a specific class"""
         # Assuming there are some objects of SomeClass in the storage
         class_objects = self.storage.count(SomeClass)
-        self.assertGreaterEqual(class_objects, 0, "count method should return count of specific class objects")
+        self.assertGreaterEqual(class_objects, 0,
+                                "count method should return count\
+                                        of specific class objects")
 
     def test_count_method_no_objects(self):
         """Test if count method returns 0 for no objects"""
         # Assuming there are no objects in the storage
         total_objects = self.storage.count()
-        self.assertEqual(total_objects, 0, "count method should return 0 for no objects")
+        self.assertEqual(total_objects, 0,
+                         "count method should return 0 for no objects")
 
 
 class TestFileStorage(unittest.TestCase):
@@ -180,7 +189,8 @@ class TestFileStorage(unittest.TestCase):
     def test_count_all_objects(self):
         """Test counting all objects in storage"""
         count_all = models.storage.count()
-        total_objects = sum(models.storage.count(cls) for cls in classes.values())
+        total_objects = sum(models.storage.count(cls) for
+                            cls in classes.values())
         self.assertEqual(count_all, total_objects)
 
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
