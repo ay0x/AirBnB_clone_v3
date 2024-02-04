@@ -81,7 +81,7 @@ class FileStorage:
         Returns:
             The object based on the class and its ID, or None if not found
         """
-        key = "{}.{}".format(cls, id)
+        key = "{}.{}".format(cls.__name__, id)
         return self.__objects.get(key, None)
 
     def count(self, cls=None):
