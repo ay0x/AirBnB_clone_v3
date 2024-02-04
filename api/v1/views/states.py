@@ -17,9 +17,19 @@ def get_state():
 
 @app_views.route("/states/<string:state_id>", methods=["GET"], strict_slashes=False)
 def get_state_id(state_id):
-    """Get a state by its ID§"""
+    """Get a state by its ID"""
     state = storage.get("State", state_id)
     if state is None:
         abort(404)
     return jsonify(state.to_dict())
+
+@app_views.route("/states/<string:state_id>", methods=["DELETE"], strict_slashes=False)
+def delete_state_id(state_id):
+    """Delete a state by its ID"""
+    state = storage.get("State", state_id)
+    if state is None:
+        abort(404)
+    else:
+        state.delete()
+        return jsonify({})
     
