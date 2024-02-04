@@ -17,13 +17,13 @@ classes = {"amenities": Amenity, "cities": City,
            "places": Place, "reviews": Review, "states": State, "users": User}
 
 
-@app_views.route("/status", methods=["GET"])
+@app_views.route("/status", methods=["GET"], strict_slashes=False)
 def get_status():
     """Returns the status of our API"""
     return jsonify({"status": "OK"})
 
 
-@app_views.route("/stats", methods=["GET"])
+@app_views.route("/stats", methods=["GET"], strict_slashes=False)
 def get_stats():
     """Returns the stat of our API"""
     obj_dict = {}
