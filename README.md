@@ -155,7 +155,7 @@ No known bugs at this time.
 
 ## Authors
 Ayo Idoko - [Github](https://github.com/ay0x) / [Twitter](https://twitter.com/ayxbami)  
-Ansa Nke - [Github](https://github.com/AnsaYong) / [Twitter](https://twitter.com/earthtojhuang)
+Ansa Nke - [Github](https://github.com/AnsaYong) / [Twitter](https://twitter.com/ansa_yong)
 
 Second part of Airbnb: Joann Vuong
 ## License
